@@ -61,7 +61,7 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
-  • Closure is when a function is referencing a variable outside of its functional scope.
+  • Closure is when an inner function is referencing a variable in an outer function.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -83,11 +83,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
-  • Closure is used in the return function, you can tell because the function is calling upon variables outside of the function.
+  • Closure is used in the return function, you can tell because the function is calling upon variables in the outer function.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
   • The name called in `dansRoll` will always be the same but the number rolled can change.
 c. What is the lexical scope of `newRoll`? 
-  • `newRoll` is in the inner scope. 
+  • `newRoll` is scoped to `function`. 
 
 
 ### Task 3 - Stretch Goals
