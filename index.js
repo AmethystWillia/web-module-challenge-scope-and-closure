@@ -32,7 +32,8 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   2. Which of the two uses a closure? How can you tell?
     • counter1 uses closure because it has a function within it that calls upon a variable in the outer function.
   3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better?
-    •  
+    • counter1 would be preferrable in a situation where you'd like to reuse the same counter function for different variables, each with their own count.
+    • counter2 may be better in a situation where you only need one count variable.
 */
 
 // counter1 code
@@ -80,19 +81,35 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(inning, num){
-  /*Code Here*/
+function finalScore(inningcb, num){
+  let results = {
+    Home: 0,
+    Away: 0
+  };
+
+  for (let i = 0; i <= num; i++) {
+    results.Home = results.Home + inningcb();
+    results.Away = results.Away + inningcb();
+  }
+  return results;
 }
+
+console.log(finalScore(inning, 9));
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inningcb) {
+  let results = {
+    Away: inningcb(),
+    Home: inningcb()
+  }
+  return results;
 }
 
+console.log(getInningScore(inning));
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
